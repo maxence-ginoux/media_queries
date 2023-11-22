@@ -1,0 +1,166 @@
+/**body {
+    margin: 0;
+    font-family ;
+  }
+  
+header {
+    background-color: #00bfff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+  
+.menu {
+    display: flex;
+}
+  
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+.menu li {
+    margin-right: 20px;
+}
+  
+.menu a {
+    text-decoration: none;
+    color: rgb(250, 250, 251);
+}
+  
+/* Styles pour le bouton hamburger */
+/**#burger {
+    display: none;
+}
+  
+label[for="burger"] {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+}**/
+  
+/* Media query pour les résolutions inférieures ou égales à 767px */
+/**@media screen and (max-width: 767px) {
+label[for="burger"] {
+    display: block;
+
+}
+  
+.menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 20%;
+    background-color: #00bbff;
+    z-index: 1;
+}
+  
+#burger:checked + .menu ul {
+    display: flex;
+    }
+}**/
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.burgermenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position:relative;
+    background-color: rgb(0, 191, 255);
+    color: white;
+    padding: 20px;
+}
+
+.menu{
+    display: flex;    
+}
+
+.menu li{
+    padding-left: 30px;
+}
+
+.menu li a{
+    display: inline-block;
+    
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.menu li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(0, 191, 255);
+}
+
+.menu li a:hover:after{
+    width: 100%;
+}
+.openmenu, .closemenu{
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}
+
+.openmenu{
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.closemenu{
+    top: 20px;
+    left: 20px;
+}
+
+#burger{
+    display: none;
+}
+
+@media(max-width: 767px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: rgb(0, 191, 255);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li{
+        margin-top: 40px;
+    }
+    .menu li a{
+        padding: 10px;
+    }
+    .openmenu , .closemenu{
+        display: block;
+    }
+    #burger:checked ~ .menu{
+        left: 0;
+    }
+}
